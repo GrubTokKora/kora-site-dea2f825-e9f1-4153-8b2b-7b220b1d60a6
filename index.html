@@ -179,11 +179,12 @@
         
         /* Menu Card Hover */
         .menu-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
         }
         .menu-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(193, 18, 31, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(23, 23, 23, 0.08);
+            border-color: rgba(193, 18, 31, 0.28);
         }
         
         /* Button Shine Effect */
@@ -940,12 +941,12 @@
                     : '<span class="text-red-600 text-xl" title="Non-Vegetarian"><i class="fas fa-drumstick-bite"></i></span>';
 
                 return `
-                    <div class="menu-card bg-brand-cream rounded-2xl p-4 relative overflow-hidden group">
+                    <div class="menu-card bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-black/5 shadow-[0_4px_16px_rgba(23,23,23,0.06)] group">
                         <div class="flex items-start justify-between gap-4 mb-3">
-                            <h3 class="font-playfair text-xl font-bold text-brand-dark group-hover:text-brand-red transition-colors">${item.name}</h3>
-                            <span class="text-brand-red font-bold whitespace-nowrap">₹${item.price}</span>
+                            <h3 class="font-playfair text-lg md:text-xl font-semibold text-brand-dark leading-snug group-hover:text-brand-deep transition-colors">${item.name}</h3>
+                            <span class="text-brand-red font-extrabold text-base md:text-lg whitespace-nowrap tracking-tight">₹${item.price}</span>
                         </div>
-                        <div>
+                        <div class="pt-1">
                             ${vegIcon}
                         </div>
                     </div>
