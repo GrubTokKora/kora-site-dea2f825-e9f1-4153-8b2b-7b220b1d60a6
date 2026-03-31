@@ -263,9 +263,9 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Content -->
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md mb-6">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="text-sm font-semibold text-brand-dark">Open Now - 10 AM to 10:30 PM</span>
+                    <div id="business-status-pill" class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md mb-6">
+                        <span id="business-status-dot" class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <span id="business-status-text" class="text-sm font-semibold text-brand-dark">Open Now - 10 AM to 10:30 PM</span>
                     </div>
                     
                     <h1 class="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-brand-deep leading-tight mb-6">
@@ -960,6 +960,29 @@
             }, 3000);
         }
 
+        function updateBusinessStatus() {
+            const statusText = document.getElementById('business-status-text');
+            const statusDot = document.getElementById('business-status-dot');
+            if (!statusText || !statusDot) return;
+
+            // Open daily from 10:00 to 22:30 local time.
+            const now = new Date();
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+            const openMinutes = 10 * 60;
+            const closeMinutes = 22 * 60 + 30;
+            const isOpen = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
+
+            if (isOpen) {
+                statusText.textContent = 'Open Now - 10 AM to 10:30 PM';
+                statusDot.classList.remove('bg-red-500');
+                statusDot.classList.add('bg-green-500', 'animate-pulse');
+            } else {
+                statusText.textContent = 'Closed Now - Opens at 10:00 AM';
+                statusDot.classList.remove('bg-green-500');
+                statusDot.classList.add('bg-red-500', 'animate-pulse');
+            }
+        }
+
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1011,6 +1034,8 @@
 
         // Initialize Menu
         populateMenu('all');
+        updateBusinessStatus();
+        setInterval(updateBusinessStatus, 60000);
     </script>
 </body>
 </html>
