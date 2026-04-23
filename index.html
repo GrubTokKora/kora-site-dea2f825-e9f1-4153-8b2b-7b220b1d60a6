@@ -7,9 +7,10 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WPGV6C9N');</script>
+})(window,document,'script','dataLayer','GTM-PFJ7NXJQ');</script>
 <!-- End Google Tag Manager -->
 <!-- KORA_TRACKING_GTM_HEAD_END -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universe Bakes & Cakes | Premium Bakery in Nizamabad</title>
@@ -1109,6 +1110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         updateBusinessStatus();
         setInterval(updateBusinessStatus, 60000);
     </script>
+
 <!-- KORA_TRACKING_EVENTS_START -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1122,13 +1124,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       return (value || '').replace(/\s+/g, ' ').trim();
     }
 
+    function toPath(href) {
+      try {
+        if (!href) return null;
+        var url = new URL(href, window.location.origin);
+        return url.pathname || '/';
+      } catch (e) {
+        return null;
+      }
+    }
+
     document.querySelectorAll('button, a').forEach(function (el) {
       el.addEventListener('click', function () {
+        var clickId =
+          el.getAttribute('data-kora-click-id') ||
+          el.getAttribute('data-analytics-id') ||
+          el.getAttribute('id') ||
+          null;
+        var clickLabel =
+          el.getAttribute('data-kora-click-label') ||
+          cleanText(el.innerText || el.textContent || '') ||
+          null;
+        var href = el.getAttribute('href') || null;
         trackEvent('button_click', {
-          label: cleanText(el.innerText || el.textContent || '') || null,
+          click_id: clickId,
+          click_label: clickLabel,
+          page_path: window.location.pathname || '/',
+          link_url: href,
           element_id: el.getAttribute('id') || null,
           element_class: el.getAttribute('class') || null,
-          link_url: el.getAttribute('href') || null,
+          link_path: toPath(href),
         });
       });
     });
