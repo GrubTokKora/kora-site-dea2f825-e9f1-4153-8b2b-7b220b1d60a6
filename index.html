@@ -202,15 +202,21 @@
             background-size: 40px 40px;
         }
 
-        /* Menu Card Hover */
-        .menu-card {
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        /* Modern Menu Tabs */
+        .category-tab {
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            color: #374151;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+            transition: all 0.22s ease;
         }
 
-        .menu-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 28px rgba(23, 23, 23, 0.08);
-            border-color: rgba(193, 18, 31, 0.28);
+        .category-tab:hover {
+            color: #7A0012;
+            border-color: rgba(193, 18, 31, 0.35);
+            box-shadow: 0 6px 14px rgba(23, 23, 23, 0.08);
+            transform: translateY(-1px);
         }
 
         /* Button Shine Effect */
@@ -300,9 +306,62 @@
 
         /* Category Tab Active */
         .category-tab.active {
-            background: linear-gradient(135deg, #C1121F 0%, #7A0012 100%);
+            background: linear-gradient(135deg, #C1121F 0%, #8B1020 100%);
+            border-color: rgba(122, 0, 18, 0.85);
             color: white;
-            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(122, 0, 18, 0.28);
+            transform: translateY(-1px);
+        }
+
+        /* Menu List Rows */
+        .menu-row {
+            border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+            padding: 0.95rem 0;
+            transition: border-color 0.2s ease;
+        }
+
+        .menu-row:hover {
+            border-color: rgba(193, 18, 31, 0.5);
+        }
+
+        .menu-category-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.2vw, 2.25rem);
+            line-height: 1.2;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-align: center;
+            color: #7A0012;
+            letter-spacing: 0.01em;
+            margin: 0;
+        }
+
+        .menu-category-heading i {
+            font-size: 0.78em;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .menu-category-icon-brand {
+            color: #C1121F;
+        }
+
+        .menu-category-icon-veg {
+            color: #16A34A;
+        }
+
+        .menu-category-icon-nonveg {
+            color: #C1121F;
+        }
+
+        .menu-category-divider {
+            height: 2px;
+            width: 100%;
+            margin: 0.75rem 0 1.15rem;
+            background: linear-gradient(90deg, rgba(122, 0, 18, 0.9), rgba(193, 18, 31, 0.5));
         }
 
         /* Price Tag */
@@ -589,55 +648,45 @@
             <!-- Category Tabs -->
             <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
                 <button onclick="filterMenu('all')"
-                    class="category-tab active px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="all">
+                    class="category-tab active px-5 py-2.5 font-semibold text-sm md:text-base" data-category="all">
                     All Items
                 </button>
                 <button onclick="filterMenu('cakes')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="cakes">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="cakes">
                     <i class="fas fa-birthday-cake mr-2"></i>Cakes
                 </button>
                 <button onclick="filterMenu('pastries')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="pastries">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="pastries">
                     <i class="fas fa-cookie mr-2"></i>Pastries
                 </button>
                 <button onclick="filterMenu('biscuits')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="biscuits">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="biscuits">
                     <i class="fas fa-cookie-bite mr-2"></i>Biscuits
                 </button>
                 <button onclick="filterMenu('starters')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="starters">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="starters">
                     <i class="fas fa-drumstick-bite mr-2"></i>Starters
                 </button>
                 <button onclick="filterMenu('burgers')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="burgers">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="burgers">
                     <i class="fas fa-hamburger mr-2"></i>Sandwiches & Burgers
                 </button>
                 <button onclick="filterMenu('snacks')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="snacks">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="snacks">
                     <i class="fas fa-pepper-hot mr-2"></i>Snacks
                 </button>
                 <button onclick="filterMenu('rolls')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="rolls">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="rolls">
                     <i class="fas fa-hotdog mr-2"></i>Rolls
                 </button>
                 <button onclick="filterMenu('desserts')"
-                    class="category-tab px-6 py-3 rounded-full font-semibold transition-all bg-gray-100 text-gray-700 hover:bg-brand-red hover:text-white"
-                    data-category="desserts">
+                    class="category-tab px-5 py-2.5 font-semibold text-sm md:text-base" data-category="desserts">
                     <i class="fas fa-ice-cream mr-2"></i>Desserts
                 </button>
             </div>
 
-            <!-- Menu Grid -->
-            <div id="menu-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up"
-                data-aos-delay="200">
+            <!-- Menu List -->
+            <div id="menu-grid" class="space-y-8" data-aos="fade-up" data-aos-delay="200">
                 <!-- Menu items will be populated by JavaScript -->
             </div>
         </div>
@@ -1054,35 +1103,100 @@
             const grid = document.getElementById('menu-grid');
             grid.innerHTML = '';
 
-            let items = [];
+            const categoryDisplayNames = {
+                cakes: 'Cakes',
+                pastries: 'Pastries',
+                biscuits: 'Biscuits',
+                starters: 'Starters',
+                burgers: 'Sandwiches & Burgers',
+                snacks: 'Snacks',
+                rolls: 'Rolls',
+                desserts: 'Desserts'
+            };
+            const categoryIcons = {
+                cakes: 'fas fa-birthday-cake',
+                pastries: 'fas fa-cookie',
+                biscuits: 'fas fa-cookie-bite',
+                starters: 'fas fa-drumstick-bite',
+                burgers: 'fas fa-hamburger',
+                snacks: 'fas fa-pepper-hot',
+                rolls: 'fas fa-hotdog',
+                desserts: 'fas fa-ice-cream'
+            };
+            const resolveHeadingIcon = (headingText = '', fallbackCategory = '') => {
+                const normalized = String(headingText).toLowerCase();
+                if (normalized.includes('non veg starter')) {
+                    return { iconClass: categoryIcons.starters, colorClass: 'menu-category-icon-nonveg' };
+                }
+                if (normalized.includes('veg starter')) {
+                    return { iconClass: 'fas fa-leaf', colorClass: 'menu-category-icon-veg' };
+                }
+                if (normalized.includes('cake')) return { iconClass: categoryIcons.cakes, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('pastr')) return { iconClass: categoryIcons.pastries, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('biscuit')) return { iconClass: categoryIcons.biscuits, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('starter')) return { iconClass: categoryIcons.starters, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('sandwich') || normalized.includes('burger')) return { iconClass: categoryIcons.burgers, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('snack')) return { iconClass: categoryIcons.snacks, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('roll')) return { iconClass: categoryIcons.rolls, colorClass: 'menu-category-icon-brand' };
+                if (normalized.includes('dessert') || normalized.includes('pudding')) return { iconClass: categoryIcons.desserts, colorClass: 'menu-category-icon-brand' };
+                return { iconClass: categoryIcons[fallbackCategory] || 'fas fa-utensils', colorClass: 'menu-category-icon-brand' };
+            };
 
-            if (category === 'all') {
-                Object.keys(menuData).forEach(key => {
-                    items = items.concat(menuData[key].map(item => ({ ...item, category: key })));
-                });
-            } else {
+            let items = [];
+            if (category !== 'all') {
                 items = menuData[category] || [];
             }
 
-            const renderCard = (item) => {
+            const renderRow = (item) => {
                 const vegIcon = item.veg
-                    ? '<span class="text-green-600 text-xl" title="Vegetarian"><i class="fas fa-leaf"></i></span>'
-                    : '<span class="text-red-600 text-xl" title="Non-Vegetarian"><i class="fas fa-drumstick-bite"></i></span>';
+                    ? '<span class="text-green-600 text-base" title="Vegetarian"><i class="fas fa-leaf"></i></span>'
+                    : '<span class="text-red-600 text-base" title="Non-Vegetarian"><i class="fas fa-drumstick-bite"></i></span>';
 
                 return `
-                    <div class="menu-card bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-black/5 shadow-[0_4px_16px_rgba(23,23,23,0.06)] group">
-                        <div class="flex items-start justify-between gap-4 mb-3">
-                            <h3 class="font-playfair text-lg md:text-xl font-semibold text-brand-dark leading-snug group-hover:text-brand-deep transition-colors">${item.name}</h3>
-                            <span class="text-brand-red font-extrabold text-base md:text-lg whitespace-nowrap tracking-tight">₹${item.price}</span>
+                    <div class="menu-row group">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="min-w-0">
+                                <h3 class="font-semibold text-sm md:text-base uppercase tracking-wide text-brand-dark group-hover:text-brand-deep transition-colors">${item.name}</h3>
+                            </div>
+                            <span class="text-brand-deep font-extrabold text-base md:text-lg whitespace-nowrap tracking-tight">₹${item.price}</span>
                         </div>
-                        <div class="pt-1">
+                        <div class="pt-2">
                             ${vegIcon}
                         </div>
                     </div>
                 `;
             };
 
-            const hasSubcategories = category !== 'all' && items.some(item => item.subcategory);
+            if (category === 'all') {
+                const allSectionsHTML = Object.entries(menuData)
+                    .map(([groupKey, groupItems]) => {
+                        if (!groupItems || groupItems.length === 0) return '';
+                        const heading = categoryDisplayNames[groupKey] || groupKey;
+                        const headingIcon = resolveHeadingIcon(heading, groupKey);
+                        return `
+                            <div class="mt-5">
+                                <h3 class="menu-category-heading"><i class="${headingIcon.iconClass} ${headingIcon.colorClass}"></i>${heading}</h3>
+                                <div class="menu-category-divider"></div>
+                                <div class="grid md:grid-cols-2 md:gap-x-10">
+                                    ${groupItems.map(renderRow).join('')}
+                                </div>
+                            </div>
+                        `;
+                    })
+                    .join('');
+
+                grid.innerHTML = allSectionsHTML;
+                requestAnimationFrame(() => {
+                    if (window.AOS) {
+                        AOS.refreshHard();
+                    }
+                    // Re-evaluate in-view animations after dynamic height/content updates.
+                    window.dispatchEvent(new Event('scroll'));
+                });
+                return;
+            }
+
+            const hasSubcategories = items.some(item => item.subcategory);
 
             if (hasSubcategories) {
                 const groupedItems = items.reduce((acc, item) => {
@@ -1093,14 +1207,18 @@
                 }, {});
 
                 const sectionsHTML = Object.entries(groupedItems)
-                    .map(([subcategory, subItems]) => `
-                        <div class="col-span-full mt-3">
-                            <h3 class="text-xs text-brand-red font-semibold uppercase tracking-wider mb-4">${subcategory}</h3>
-                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                ${subItems.map(renderCard).join('')}
+                    .map(([subcategory, subItems]) => {
+                        const headingIcon = resolveHeadingIcon(subcategory, category);
+                        return `
+                            <div class="mt-5">
+                                <h3 class="menu-category-heading"><i class="${headingIcon.iconClass} ${headingIcon.colorClass}"></i>${subcategory}</h3>
+                                <div class="menu-category-divider"></div>
+                                <div class="grid md:grid-cols-2 md:gap-x-10">
+                                    ${subItems.map(renderRow).join('')}
+                                </div>
                             </div>
-                        </div>
-                    `)
+                        `;
+                    })
                     .join('');
 
                 grid.innerHTML = sectionsHTML;
@@ -1114,7 +1232,7 @@
                 return;
             }
 
-            grid.innerHTML = items.map(renderCard).join('');
+            grid.innerHTML = `<div class="grid md:grid-cols-2 md:gap-x-10">${items.map(renderRow).join('')}</div>`;
             requestAnimationFrame(() => {
                 if (window.AOS) {
                     AOS.refreshHard();
