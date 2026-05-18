@@ -8,8 +8,8 @@
   --color-brand-cream: #fff3e0;
   --color-brand-dark: #171717;
   --color-brand-gold: #eab308;
-  --font-family-playfair: "Playfair Display", serif;
-  --font-family-poppins: Poppins, sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-poppins: Poppins, sans-serif;
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float 6s ease-in-out 3s infinite;
   --animate-spin-slow: spin 20s linear infinite;
