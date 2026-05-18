@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@source "../**/*.html";
+@source "../assets/**/*.js";
+
+@theme {
+  --color-brand-red: #c1121f;
+  --color-brand-deep: #7a0012;
+  --color-brand-cream: #fff3e0;
+  --color-brand-dark: #171717;
+  --color-brand-gold: #eab308;
+  --font-family-playfair: "Playfair Display", serif;
+  --font-family-poppins: Poppins, sans-serif;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
