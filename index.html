@@ -309,6 +309,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
 
+        /* Screen-reader-only text (accessible SEO helper) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         /* Image Hover Zoom */
         .img-zoom {
             overflow: hidden;
@@ -486,9 +499,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse" id="business-status-dot"></span>
 <span class="text-sm font-semibold text-brand-dark" id="business-status-text">Open Now - 10 AM
                             to 10:30 PM</span>
-</div>
-<h1 class="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-brand-deep leading-tight mb-6">
-                        Delicious Cakes, Pastries &amp; More: <br class="hidden md:block"/> Taste the <span class="text-gradient">Universe</span> of Flavors
+                    </div>
+                    <h1 class="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-brand-deep leading-tight mb-6">
+                        <span class="sr-only">
+                            Universe Bakes &amp; Cakes bakery in Nizamabad – cakes, pastries, biscuits, snacks, sandwiches, burgers, desserts.
+                        </span>
+                        Taste the <span class="text-gradient">Universe</span> of Flavors
                     </h1>
 <p class="text-lg text-gray-700 mb-8 max-w-lg leading-relaxed">
                         Premium bakery in Nizamabad serving heavenly cakes, pastries, and savory delights. Every bite is
