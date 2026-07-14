@@ -295,6 +295,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(193, 18, 31, 0.12);
             box-shadow: 0 4px 16px rgba(23, 23, 23, 0.06);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         #menu-sticky-container {
@@ -313,10 +316,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
-            padding: 0.25rem 1rem;
-            max-width: 80rem;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 0.25rem 0;
+            width: 100%;
+            max-width: 100%;
         }
 
         .menu-categories-scroll::-webkit-scrollbar {
@@ -326,20 +328,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .menu-categories-scroll .category-tab {
             flex: 0 0 auto;
             white-space: nowrap;
-        }
-
-        @media (min-width: 640px) {
-            .menu-categories-scroll {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .menu-categories-scroll {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
         }
 
         /* Button Shine Effect */
@@ -761,8 +749,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     Explore our wide range of cakes, pastries, biscuits, and savory items crafted to perfection
                 </p>
 </div>
-</div>
-<div class="relative z-10" id="menu-sticky-container">
+<div id="menu-sticky-container">
 <!-- Category Tabs -->
 <div class="menu-categories-bar" id="menu-categories-bar">
 <div aria-label="Menu categories" class="menu-categories-scroll" role="tablist">
@@ -793,7 +780,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 <!-- Menu List -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="space-y-8" id="menu-grid">
 <!-- Menu items will be populated by JavaScript -->
 </div>
