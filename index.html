@@ -241,6 +241,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-size: 40px 40px;
         }
 
+        /* Clickable elements */
+        button,
+        [role="button"],
+        a[href],
+        .category-tab,
+        .faq-toggle,
+        #mobile-menu-btn,
+        #back-to-top {
+            cursor: pointer;
+        }
+
         /* Modern Menu Tabs */
         .category-tab {
             background: rgba(255, 255, 255, 0.88);
@@ -249,6 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #374151;
             box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
             transition: all 0.22s ease;
+            cursor: pointer;
         }
 
         .category-tab:hover {
@@ -422,7 +434,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0% 50%);
         }
 
+        .faq-item {
+            transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+        }
+
+        .faq-item:hover {
+            background-color: #ffe8cc;
+            box-shadow: 0 8px 20px rgba(122, 0, 18, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .faq-toggle {
+            cursor: pointer;
+            transition: color 0.25s ease;
+        }
+
+        .faq-item:hover .faq-toggle {
+            color: #7A0012;
+        }
+
+        .faq-item:hover .faq-toggle i {
+            color: #C1121F;
+        }
+
         .faq-content {
+            max-height: 0;
+            overflow: hidden;
             transition: max-height 0.4s ease-in-out;
         }
     </style>
@@ -835,43 +872,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
 <!-- FAQ Item 1 -->
-<div class="bg-brand-cream rounded-xl overflow-hidden">
+<div class="faq-item bg-brand-cream rounded-xl overflow-hidden">
 <button class="w-full flex justify-between items-center text-left p-5 font-semibold text-brand-dark focus:outline-none faq-toggle">
 <span>Do you take custom cake orders?</span>
 <i class="fas fa-chevron-down transition-transform duration-300"></i>
 </button>
-<div class="px-5 pb-5 text-gray-700 max-h-0 overflow-hidden faq-content">
-<p>Yes, we specialize in custom cakes for birthdays, weddings, and any special occasion. Please contact us at least 2-3 days in advance to discuss your design and flavor requirements.</p>
+<div class="faq-content">
+<p class="px-5 pb-5 text-gray-700">Yes, we specialize in custom cakes for birthdays, weddings, and any special occasion. Please contact us at least 2-3 days in advance to discuss your design and flavor requirements.</p>
 </div>
 </div>
 <!-- FAQ Item 2 -->
-<div class="bg-brand-cream rounded-xl overflow-hidden">
+<div class="faq-item bg-brand-cream rounded-xl overflow-hidden">
 <button class="w-full flex justify-between items-center text-left p-5 font-semibold text-brand-dark focus:outline-none faq-toggle">
 <span>What are your most popular items?</span>
 <i class="fas fa-chevron-down transition-transform duration-300"></i>
 </button>
-<div class="px-5 pb-5 text-gray-700 max-h-0 overflow-hidden faq-content">
-<p>Our Red Velvet Cake, Chocolate Truffle Pastry, and fresh Chicken Puffs are customer favorites. We also recommend trying our variety of freshly baked biscuits!</p>
+<div class="faq-content">
+<p class="px-5 pb-5 text-gray-700">Our Red Velvet Cake, Chocolate Truffle Pastry, and fresh Chicken Puffs are customer favorites. We also recommend trying our variety of freshly baked biscuits!</p>
 </div>
 </div>
 <!-- FAQ Item 3 -->
-<div class="bg-brand-cream rounded-xl overflow-hidden">
+<div class="faq-item bg-brand-cream rounded-xl overflow-hidden">
 <button class="w-full flex justify-between items-center text-left p-5 font-semibold text-brand-dark focus:outline-none faq-toggle">
 <span>Do you offer eggless options?</span>
 <i class="fas fa-chevron-down transition-transform duration-300"></i>
 </button>
-<div class="px-5 pb-5 text-gray-700 max-h-0 overflow-hidden faq-content">
-<p>Absolutely! Most of our cakes, pastries, and biscuits are available in eggless versions. Please look for the vegetarian symbol on our menu or ask our staff for assistance.</p>
+<div class="faq-content">
+<p class="px-5 pb-5 text-gray-700">Absolutely! Most of our cakes, pastries, and biscuits are available in eggless versions. Please look for the vegetarian symbol on our menu or ask our staff for assistance.</p>
 </div>
 </div>
 <!-- FAQ Item 4 -->
-<div class="bg-brand-cream rounded-xl overflow-hidden">
+<div class="faq-item bg-brand-cream rounded-xl overflow-hidden">
 <button class="w-full flex justify-between items-center text-left p-5 font-semibold text-brand-dark focus:outline-none faq-toggle">
 <span>What are your store hours?</span>
 <i class="fas fa-chevron-down transition-transform duration-300"></i>
 </button>
-<div class="px-5 pb-5 text-gray-700 max-h-0 overflow-hidden faq-content">
-<p>We are open every day of the week, from 10:00 AM to 10:30 PM.</p>
+<div class="faq-content">
+<p class="px-5 pb-5 text-gray-700">We are open every day of the week, from 10:00 AM to 10:30 PM.</p>
 </div>
 </div>
 </div>
