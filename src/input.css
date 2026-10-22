@@ -8,8 +8,8 @@
   --color-brand-cream: #fff3e0;
   --color-brand-dark: #171717;
   --color-brand-gold: #eab308;
-  --font-playfair: "Playfair Display", serif;
-  --font-poppins: Poppins, sans-serif;
+  --font-playfair: var(--kora-font-heading, "Playfair Display"), serif;
+  --font-poppins: var(--kora-font-body, Poppins), sans-serif;
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float 6s ease-in-out 3s infinite;
   --animate-spin-slow: spin 20s linear infinite;
@@ -277,7 +277,7 @@ a[href],
 }
 
 .menu-category-heading {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--kora-font-heading, 'Playfair Display'), serif;
     font-size: clamp(1.8rem, 3.2vw, 2.25rem);
     line-height: 1.2;
     font-weight: 700;
@@ -420,7 +420,7 @@ a[href],
   gap: 0.5rem;
   margin: 0;
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--kora-font-heading, 'Playfair Display'), serif;
   font-size: clamp(1.8rem, 3.2vw, 2.25rem);
   line-height: 1.2;
   font-weight: 700;
